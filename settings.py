@@ -1,13 +1,13 @@
 # Bucket name
-BUCKET_NAME = "cbex"
+BUCKET_NAME = "stock"
 # FTS index
 FTS_INDEX_FILE = "fts_index.json"
 # FTS index name
-FTS_INDEX_NAME = "cbex"
+FTS_INDEX_NAME = "stock"
 # Stock file model
 STOCKS_FILE = "stocks.json"
 # The list of nodes
-CLUSTER_NODES = ["localhost"]
+CLUSTER_NODES = ["stock-0000","stock-0001","stock-0002"]
 # Exposed web port e.g. 8888 or 80
 WEB_PORT = 8888
 # Whether the current cluster is on AWS
@@ -34,4 +34,4 @@ FLAVOR = "stocks"
 # Default timeout (5s)
 TIMEOUT = 5
 # Default RAM Quota
-BUCKET_RAM_QUOTA = 1024
+BUCKET_RAM_QUOTA = 200
