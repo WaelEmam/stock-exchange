@@ -1,4 +1,4 @@
-#!/usr/bin/env - python
+#!/usr/bin/env python
 from couchbase.bucket import Bucket
 import couchbase.subdocument as SD
 import settings
