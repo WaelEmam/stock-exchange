@@ -85,7 +85,7 @@ class GeoLeaderboardHandler(tornado.web.RequestHandler):
         {} \
         ORDER BY portfolio.symbol"
         geo_data = {}
-        for geo in ["USA", "EU", "Unknown"]:
+        for geo in ["USA", "EU", "Canada", "Unknown"]:
             if geo == "Unknown":
                 where_clause = "where doc.`type`=='order' AND doc.`geo` IS MISSING"
             else:
@@ -301,7 +301,7 @@ class SearchHandler(tornado.web.RequestHandler):
             data = '{"query": {"query": "' + query + '"}, "highlight": null, "fields": null, "facets": null, "explain": false}'
             fts_node = random.choice(fts_nodes)
             request = HTTPRequest(
-                url='http://{}:8094/api/index/English/query'.format(fts_node),
+                url='http://{}:8094/api/index/stock/query'.format(fts_node),
                 method='POST', body=data, auth_username=settings.ADMIN_USER,
                 auth_password=settings.ADMIN_PASS, auth_mode='basic',
                 headers={'Content-Type': 'application/json'})
